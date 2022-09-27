@@ -1,0 +1,12 @@
+from django.shortcuts import render
+
+# Create your views here.
+def pascasarjana(request):
+    judul = ["Doktor Pendidikan", "Doktor Ilmu Akuntansi", "Magister Ilmu Hukum", "Magister ilmu Pertanian", "Magister Administrasi Publik", "Magister Akuntansi", "Magister Ilmu Komunikasi", "Magister Manajemen", "Magister Teknik Kimia", "Pendidikan Bahasa Indonesia", "Pendidikan Bahasa Inggris", "Pendidikan Matematika", "Teknologi Pendidkan"]
+    gambaranumum = "Universitas Sultan Ageng Tirtayasa tidak hanya mengasuh program Sarjana dan Diploma III, akan tetapi juga menyelenggarakan pendidikan Pascasarjana. Pembukaan Program Magister (S2) Universitas Sultan Ageng Tirtayasa merupakan sebuah respon atas mendesaknya kebutuhan tenaga profesional dalam berbagai bidang seiring dengan tuntutan perubahan di bidang pendidikand an pemerintahan, kebutuhan sumber daya manusia yang berkualitas dan profesional merupakan suatu realitas sejalan dengan transformasi Banten yang semula hanya sebagai wilayah Pembantu Gubernur/Karesidenan yang tidak cukup hanya SDM aparatur memiliki kualifikasi pendidikan Sarjana (S1), karenanya untuk menjawab kebutuhan pengembangan Sumber Daya Manusia tenaga pendidikan dan kependidikan serta bidang-bidang profesi lainnya kehadiran Pascasarjana merupakan sebuah keniscayaan dan menjadi suatu kebutuhan. Selain itu, Pascasarjana merupakan kawah candradimuka pengembangan keilmuan yang dapat menghasilkan karya-karya ilmiah melalui riset unggulan dan menghasilkan lulusan yang memiliki kualifikasi teoretik, metodologis, analitik, dan praktis yang bermutu dalam ilmu pendidikan, Pendidikan Bahasa, Ilmu Hukum, Administrasi Publik, Ekonomi Akuntansi dan Manajemen. Secara khusus Program Pascasarjana Universitas Sultan Ageng Tirtayasa bertujuan menghasilkan lulusan dengan kualifikasi sebagai berikut: menguasai teori-teori dalam disiplin ilmu pendidikan, pendidikan bahasa, ilmu hukum, ilmu administrasi publik, ekonomi akuntansi dan manajemen secara komprehensif dan terpadu; Mempunyai keinginan kuat untuk memajukan ilmu pendidikan, pendidikan bahasa, ilmu hukum, ilmu Administrasi Publik, Ekonomi Akuntansi dan Manajemen; Memiliki kepekaan terhadap perubahan-perubahan lingkungan akademik maupun lingkungan kerja, yang diwujudkan dalam kegiatan penelitian dan pengabdian kepada masyarakat. "
+
+    konteks = {
+        'jdl': judul,
+        'gbrumum': gambaranumum,
+    }
+    return render(request, 'pascasarjana.html', konteks)

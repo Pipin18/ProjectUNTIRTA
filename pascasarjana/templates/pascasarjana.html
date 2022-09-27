@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<center>
+    <h2 style="background-color:rgb(161, 97, 33);">PASCASARJANA</h2>
+</center>
+
+<p></p>
+<center>
+    <img src="https://ilmupertanian.untirta.ac.id/asset/foto_statis/seleksi-2.jpg" alt="pascasarjana" width="500px">
+</center>
+
+<p></p>
+<h3 style="background-color:rgba(50, 18, 64, 0.831);">Sejarah</h3>
+<p style="font-family: 'times new roman'">{{ gbrumum }}</p>
+
+<h3 style="background-color:rgba(135, 137, 46, 0.831);">Program Studi</h2>
+<p style="font-family: 'times new roman'">
+{% for judul in jdl %}
+    <li>{{ judul }}</li>
+{% endfor %}
+</p>
+
+{% endblock %}

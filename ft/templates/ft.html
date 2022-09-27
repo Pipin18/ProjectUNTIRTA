@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<center>
+    <h2 style="background-color:rgba(155, 143, 37, 0.758);">FAKULTAS TEKNIK</h2>
+</center>
+
+<p></p>
+<center>
+    <img src="http://4.bp.blogspot.com/-FW-4pxEVvP4/VKjr5CsbvNI/AAAAAAAAAQA/Aej_rsdN6vY/s1600/FT%2BUNTIRTA.jpg" alt="Fakultas teknik" width="500px">
+</center>
+
+<p></p>
+<h3 style="background-color:rgba(23, 104, 108, 0.831);">Sejarah</h3>
+<p style="font-family: 'times new roman'">{{ gbrumum }}</p>
+
+<h3 style="background-color:rgba(40, 22, 18, 0.831);">Program Studi</h3>
+<p style="font-family: 'times new roman'">
+{% for judul in jdl %}
+    <li>{{ judul }}</li>
+{% endfor %}
+</p>
+
+{% endblock %}

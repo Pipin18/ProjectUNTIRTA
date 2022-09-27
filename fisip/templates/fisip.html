@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <center>
+        <h2 style="background-color:rgba(22, 104, 78, 0.452);">FAKULTAS ILMU SOSIAL DAN PEMERINTAHAN</h2>
+    </center>
+    <p></p>
+
+    <center>
+    <img src="https://p3em.feb.untirta.ac.id/images/2016/07/26/banner.jpg" alt="Fisip" width="500px">
+    </center>
+
+    <p></p>
+    <h3 style="background-color:rgba(66, 17, 67, 0.831);">Sejarah</h3>
+    <p style="font-family: 'times new roman'">{{ gbrumum }}</p>
+    <p style="font-family: 'times new roman'">Pada tanggal 1 Februari 2006 telah dikeluarkan SK No. 295/D/T/2006 tentang Perpanjangan izin penyelenggaraan Program studi  Ilmu Administrasi Negara dan Ilmu Komunikasi selama 4 tahun</p>
+    <p style="font-family: 'times new roman'">FISIP Untirta terus berpacu dan berkembang untuk berusaha mensejajarkan diri dengan fakultas yang lebih dulu berdiri dengan mengeluarkan jurus-jurus strategis baik dibidang pendidikan, pengajaran, pengabdian masyarakat, sarana dan prasarana sebagai wujud dari Tri Dharma Perguruan Tinggi.</p>
+
+    <p></p>
+    <h3 style="background-color:rgba(34, 87, 40, 0.831);">Program Studi</h3>
+    <p style="font-family: 'times new roman'">
+    {% for judul in jdl %}
+        <li>{{ judul }}</li>
+    {% endfor %}
+</p>
+
+{% endblock %}

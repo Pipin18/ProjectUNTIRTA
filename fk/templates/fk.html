@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <center>
+        <h2 style="background-color:rgb(75, 145, 46);">FAKULTAS KEDOKTERAN</h2>
+    </center>
+
+    <p></p>
+    <center>
+        <img src="https://bidikutama.com/wp-content/uploads/2021/09/WhatsApp-Image-2021-09-28-at-10.20.30.jpeg" alt="Fakultas kedokteran" width="500px">
+    </center>
+
+    <p></p>
+    <h3 style="background-color:rgba(120, 67, 23, 0.956);">Sejarah</h3>
+    <p style="font-family: 'times new roman'">{{ gbrumum }}</p>
+    <p style="font-family: 'times new roman'">FK Untirta yang terdiri atas 5 Program Studi merupakan salah satu strategi untuk mendukung program kesehatan di Provinsi Banten</p>
+    <p style="font-family: 'times new roman'">Program Studi ini bertujuan untuk menghasilkanntenaga dokter yang kompeten di tingkat nasional dan internasional. Program studi kedokteran Untirta merupakan langkah strategis dalam memperluas peran UNTIRTA pada masalah kesehatan yang dihadapi masyarakat Indonesia pada umumnya dan masyarakat banten pada khususnya.Program Studi Kedokteran UNTIRTA memperluas akses bagi putra dan putri terbaik lulusan SMA di Provinsi Banten.</p>
+    <p style="font-family: 'times new roman'">Adanya skema beasiswa ikatan dinas dari pemda setempat sehingga setelah selesai pendidikan, mereka akan mengikuti kontrak sesuai dengan pemberi beasiswa pemerintah sesuai dengan asal. Selain ikatan dinas, Program studi pendidikan dokter Untirta terbuka untuk Putra Putri terbaik di luar Provinsi Banten melalui jalur Mandiri.</p>
+    
+    <h3 style="background-color:rgba(23, 91, 108, 0.831);">Program Studi</h2>
+    <p style="font-family: 'times new roman'">
+    {% for judul in jdl %}
+        <li>{{ judul }}</li>
+    {% endfor %}
+    </p>
+
+{% endblock %}
