@@ -5,9 +5,21 @@
 
 <body>
     <center>
-      <h1>Dosen Pendidikan Matematika</h1>
-      <table class="table table-success table-striped">
-          
+      <h1 style="background-color: rgba(76, 158, 103, 0.568) ;">Dosen Pendidikan Matematika</h1>
+    
+      {% for message in messages %}
+            {% if message %}
+            <div class="alert alert-success">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+        
+      <table class="table table-success table-bordered">
+        <center>
+          <a href="http://127.0.0.1:8000/tambah-dosen/">
+          <img src="https://www.ruangdosen.id/assets_backend/images/logo_ruangdosen.png" height="100px"></a>
+          <h6>Klik Gambar Untuk Tambah Dosen</h6>   
+          </a>
+      </center>
         <tr>
             <th>No</th>
             <th>Nama</th>
@@ -15,10 +27,11 @@
             <th>Jabatan</th>
             <th>Email</th>
             <th>Foto</th>
+            <th>Action</th>
         </tr>
         {% for dosen in lecturer %}
           <tr>
-              <td>{{dosen.no}}</td>
+            <td><a href="{% url 'ubah_dosen' dosen.id %}">{{ dosen.no }}</a></td>
               <td>{{dosen.nama}}</td>
               <td>{{dosen.nip}}</td>
               <td>{{dosen.jabatan}}</td>
@@ -28,6 +41,7 @@
                   <img src="{{ dosen.foto.url }}" width="100px">
                   {% endif %}
               </td>
+              <td><a href="{% url 'hapus_dosen' dosen.id %}" class="btn btn-danger">Hapus</a></td>
   
   
           </tr>

@@ -4,31 +4,54 @@
 {% block content %}
 <body>
     <center>
-      <h1>Mahasiswa Pendidikan Matematika</h1>
-      <table class="table table-success table-striped">
-          
+        <h1 style="background-color: rgba(76, 158, 103, 0.568) ;">Mahasiswa Pendidikan Matematika</h1>
+
+        {% for message in messages %}
+            {% if message %}
+            <div class="alert alert-success">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+        
+      <table 
+      class="table table-success table-bordered">
+        <center>
+            <a href="http://127.0.0.1:8000/tambah-mahasiswa/">
+            <img src="https://img2.pngdownload.id/20180624/kcv/kisspng-logo-student-convention-higher-education-funding-council-for-england-5b2f9b8c42cbb4.5845250315298466682736.jpg" height="70px"></a>
+            <h6>Klik Gambar Untuk Tambah Mahasiswa</h6>   
+            </a>
+        </center>
         <tr>
+        
             <th>No</th>
             <th>Nama</th>
             <th>NIM</th>
-            <th>Tempat, Tanggal Lahir</th>
+            <th>Tempat Tanggal Lahir</th>
             <th>Email</th>
             <th>Foto</th>
+            <th>Action</th>
+         
+            
         </tr>
         
             {% for mahasiswa in student %}
             <tr>
-                <td>{{mahasiswa.no}}</td>
+                <td><a href="{% url 'ubah_mahasiswa' mahasiswa.id %}">{{ mahasiswa.no }}</a></td>
                 <td>{{mahasiswa.nama}}</td>
                 <td>{{mahasiswa.nim}}</td>
                 <td>{{mahasiswa.ttl}}</td>
                 <td>{{mahasiswa.email}}</td>
                 <td>
+              
+
                     {% if mahasiswa.foto %}
                     <img src="{{ mahasiswa.foto.url }}" width="100px">
                     {% endif %}
                 </td>
-    
+                <td>
+
+                <a href="{% url 'hapus_mahasiswa' mahasiswa.id %}" class="btn btn-danger">Hapus</a>
+                
+                </td>
     
             </tr>
             {% endfor %}

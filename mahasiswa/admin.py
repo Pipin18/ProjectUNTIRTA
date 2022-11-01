@@ -4,7 +4,7 @@ from mahasiswa.models import Mahasiswa
 
 class MahasiswaAdmin(admin.ModelAdmin):
     list_display = ['no', 'nama','nim','ttl','email','foto']
-    search_fields = ['nim','nama']
+    search_fields = ['nim','nama',]
 
 
 admin.site.register(Mahasiswa, MahasiswaAdmin)

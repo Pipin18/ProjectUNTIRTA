@@ -4,22 +4,44 @@
 {% block content %}
 <body>
     <center>
-      <h1>Tenaga Pendidik FKIP</h1>
-      <table class="table table-success table-striped">
+        <h1 style="background-color: rgba(76, 158, 103, 0.568) ;">Tenaga Pendidik</h1>
+
+        {% for message in messages %}
+            {% if message %}
+            <div class="alert alert-success">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+        
+      <table 
+      class="table table-success table-bordered">
+      <center>
+        <a href="http://127.0.0.1:8000/tambah-tendik/">
+        <img src="https://untirta.ac.id/wp-content/uploads/2020/05/logo.png" height="70px"></a>
+        <h6>Klik Gambar Untuk Tambah Tenaga Pendidik</h6>   
+        </a>
+    </center>
           
         <tr>
             <th>No</th>
             <th>Nama</th>
             <th>Nip</th>
             <th>Jabatan</th>
+            <th>Action</th>
         </tr>
         
             {% for tendik in educator %}
             <tr>
-                <td>{{tendik.no}}</td>
+                <td><a href="{% url 'ubah_tendik' tendik.id %}">{{ tendik.no }}</a></td>
                 <td>{{tendik.nama}}</td>
                 <td>{{tendik.nip}}</td>
                 <td>{{tendik.jabatan}}</td>
+                <td>
+               
+                <a href="{% url 'hapus_tendik' tendik.id %}" class="btn btn-danger">Hapus</a>
+                </td>
+
+                        
+    
             </tr>
             {% endfor %}
         
@@ -29,3 +51,6 @@
     
     
 {% endblock %}
+
+
+               
